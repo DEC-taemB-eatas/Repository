@@ -1,5 +1,5 @@
-#開発環境構築
-##事前準備
+# 開発環境構築
+## 事前準備
 * docker が動く状態にしておく．
   ```
   docker -v
@@ -22,12 +22,12 @@
   Features: AsynchDNS brotli GSS-API HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM NTLM_WB PSL SPNEGO SSL TLS-SRP UnixSockets
   ```
 
-##プロジェクトのクローン
+## プロジェクトのクローン
 ```
 git clone git@github.com:DEC-taemB-eatas/target.git
 ```
 
-##必要なディレクトリの作成
+## 必要なディレクトリの作成
 このまま起動すると必要なディレクト入りがなくてエラーになる．
 
 そのため，下記コマンドを順に実行して必要なディレクトリを作成する．
@@ -43,7 +43,7 @@ mkdir -p storage/framework/views
 cd ./target
 ```
 
-##コンテナ動作に必要なファイルをダウンロード & インストール
+## コンテナ動作に必要なファイルをダウンロード & インストール
 Laravel Sail の実行に必要な vendor ディレクトリは Git では管理されていない．そのため，コマンドを実行して用意する必要がある．
 
 下記コマンドを実行すると自動的に全部入る．6 行まとめて入力して実行すること．
@@ -56,7 +56,7 @@ docker run --rm \
     laravelsail/php81-composer:latest \
     composer install --ignore-platform-reqs
 ```
-##env ファイルの準備
+## env ファイルの準備
 下記コマンドで準備する．
 ```
 cp .env.example .env
@@ -72,7 +72,7 @@ DB_DATABASE=プロジェクト作成者のDB名に合わせる
 DB_USERNAME=プロジェクト作成者のユーザ名に合わせる
 DB_PASSWORD=プロジェクト作成者のパスワードに合わせる
 ```
-##動作確認
+## 動作確認
 下記コマンドでコンテナを立ち上げる
 
 ```
