@@ -1,67 +1,98 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+#開発環境構築
+##事前準備
+* docker が動く状態にしておく．
+  ```
+  docker -v
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+  Docker version 20.10.12, build e91ed57
 
-## About Laravel
+  docker-compose -v
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+  docker-compose version 1.26.2, build eefe0d31
+  ```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* curl も必要．
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+  ```
+  curl --version
 
-## Learning Laravel
+  curl 7.68.0 (x86_64-pc-linux-gnu) libcurl/7.68.0 OpenSSL/1.1.1f zlib/1.2.11 brotli/1.0.7 libidn2/2.2.0 libpsl/0.21.0 (+libidn2/2.2.0) libssh/0.9.3/openssl/zlib nghttp2/1.40.0 librtmp/2.3
+  Release-Date: 2020-01-08
+  Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp
+  Features: AsynchDNS brotli GSS-API HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM NTLM_WB PSL SPNEGO SSL TLS-SRP UnixSockets
+  ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+##プロジェクトのクローン
+```
+git clone git@github.com:DEC-taemB-eatas/target.git
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+##必要なディレクトリの作成
+このまま起動すると必要なディレクト入りがなくてエラーになる．
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+そのため，下記コマンドを順に実行して必要なディレクトリを作成する．
+```
+mkdir -p storage/framework/cache/data/
+mkdir -p storage/framework/app/cache
+mkdir -p storage/framework/sessions
+mkdir -p storage/framework/views
+```
 
-## Laravel Sponsors
+* 以下プロジェクトディレクトリに移動すること（以下のコードで移動）
+```
+cd ./target
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+##コンテナ動作に必要なファイルをダウンロード & インストール
+Laravel Sail の実行に必要な vendor ディレクトリは Git では管理されていない．そのため，コマンドを実行して用意する必要がある．
 
-### Premium Partners
+下記コマンドを実行すると自動的に全部入る．6 行まとめて入力して実行すること．
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+```
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/var/www/html \
+    -w /var/www/html \
+    laravelsail/php81-composer:latest \
+    composer install --ignore-platform-reqs
+```
+##env ファイルの準備
+下記コマンドで準備する．
+```
+cp .env.example .env
+```
+ファイルができたら mysql 設定部分を以下のように編集する．
 
-## Contributing
+DB_USERNAME と DB_PASSWORD が DB のアクセス情報となる．phpmyadmin もこの情報でログインすることとなる．
+```
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=プロジェクト作成者のDB名に合わせる
+DB_USERNAME=プロジェクト作成者のユーザ名に合わせる
+DB_PASSWORD=プロジェクト作成者のパスワードに合わせる
+```
+##動作確認
+下記コマンドでコンテナを立ち上げる
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+./vendor/bin/sail up -d
+```
+立ち上がったら下記コマンドを順に実行し，アプリケーションの準備を整える．
+```
+./vendor/bin/sail php artisan key:generate
+./vendor/bin/sail php artisan migrate
+```
+ブラウザから localhost にアクセスするとアプリケーションの動作が確認できる．
 
-## Code of Conduct
+また，```localhost:8080``` にアクセスすると phpmyadmin にアクセスできる．
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* ユーザー名は「sail」パスワードは「password」
+* これでうまくログイン出来ないときはユーザー名「root」パスワードは空白でログインするとうまくいくはず
+* データベースは共有されていないため、マイグレーションやseederなどのデータベースの更新は各自作業が必要→メンバーで共有する
 
-## Security Vulnerabilities
+コンテナ終了させるときは下記コマンドを実行する．
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+./vendor/bin/sail down
+```
