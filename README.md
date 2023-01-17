@@ -68,9 +68,11 @@ DB_USERNAME と DB_PASSWORD が DB のアクセス情報となる．phpmyadmin �
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
-DB_DATABASE=プロジェクト作成者のDB名に合わせる
-DB_USERNAME=プロジェクト作成者のユーザ名に合わせる
-DB_PASSWORD=プロジェクト作成者のパスワードに合わせる
+DB_DATABASE=target
+DB_USERNAME=root
+DB_PASSWORD=
+
+%DB_PASSWORDの欄は空白にしてください
 ```
 ## 動作確認
 下記コマンドでコンテナを立ち上げる
