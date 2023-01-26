@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('weights', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->float("weight");
+            $table->date("measure_at");
             $table->timestamps();
         });
     }
@@ -26,6 +29,11 @@ return new class extends Migration
      */
     public function down()
     {
+        // userテーブルとの連携を解除してweightsテーブルを削除
+        Schema::table('weights', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);       // userテーブルとの連携を解除
+            $table->dropColumn(['user_id']);        // user_idカラムを削除
+        });
         Schema::dropIfExists('weights');
     }
 };
