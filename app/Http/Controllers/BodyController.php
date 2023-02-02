@@ -39,7 +39,7 @@ class BodyController extends Controller
     public function store(Request $request)
     {
         // バリデーション
-        $rulus = [
+        $rules = [
             'weight' => 'numeric | between:0,150',
             'fat' => 'numeric | between:0,100',
             'muscle' => 'numeric | min:0',
@@ -56,7 +56,7 @@ class BodyController extends Controller
             'measured_at.date' => '日付を入力してください',
         ];
 
-        $validator = Validator::make($request->all(), $rulus, $message);
+        $validator = Validator::make($request->all(), $rules, $message);
         // バリデーション:エラー
         if ($validator->fails()) {
             return redirect('body/create')
