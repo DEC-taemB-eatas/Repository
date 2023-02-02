@@ -20,18 +20,18 @@
                         <div class="flex flex-col mb-4">
                             <label class="mb-2 uppercase font-bold text-lg text-grey-darkest"
                                 for="weight">Weight</label>
-                            <input class="border py-2 px-3 text-grey-darkest" type="text" name="weight"
+                            <input class="border py-2 px-3 text-grey-darkest" type="number" name="weight"
                                 id="weight">
                         </div>
                         <div class="flex flex-col mb-4">
                             <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="fat">Fat</label>
-                            <input class="border py-2 px-3 text-grey-darkest" type="text" name="fat"
+                            <input class="border py-2 px-3 text-grey-darkest" type="number" name="fat"
                                 id="fat">
                         </div>
                         <div class="flex flex-col mb-4">
                             <label class="mb-2 uppercase font-bold text-lg text-grey-darkest"
                                 for="muscle">muscle</label>
-                            <input class="border py-2 px-3 text-grey-darkest" type="text" name="muscle"
+                            <input class="border py-2 px-3 text-grey-darkest" type="number" name="muscle"
                                 id="muscle">
                         </div>
                         <button type="submit"
