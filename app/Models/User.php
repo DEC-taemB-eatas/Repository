@@ -41,4 +41,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // userとweightは一対多の関係
+    public function userWeights()
+    {
+        return $this->hasMany(Weight::class);
+    }
+    public function userFats()
+    {
+        return $this->hasMany(Fat::class);
+    }
+    public function userMuscles()
+    {
+        return $this->hasMany(Muscle::class);
+    }
+    public function userQuestions()
+    {
+        return $this->hasMany(Question::class);
+    }
 }
