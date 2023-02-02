@@ -14,7 +14,7 @@ use App\Http\Controllers\BodyController;
 |
 */
 
-Route::resource('body', TweetController::class);
+Route::resource('body', BodyController::class);
 
 Route::get('/', function () {
     return view('welcome');
