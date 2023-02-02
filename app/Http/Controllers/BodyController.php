@@ -65,7 +65,7 @@ class BodyController extends Controller
         }
         // create()は最初から用意されている関数
         // 戻り値は挿入されたレコードの情報
-        $result = Body::create($request->all());
+        $result = BodyController::create($request->all());
         // ルーティング「todo.index」にリクエスト送信（一覧ページに移動）
         return redirect()->route('dashboard');
     }
