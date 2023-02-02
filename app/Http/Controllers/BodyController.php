@@ -23,7 +23,7 @@ class BodyController extends Controller
      */
     public function create()
     {
-        //
+        return view('body.create');
     }
 
     /**
