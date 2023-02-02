@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         
         // Create weight records
         for ($i = 1; $i <= 10; $i++) {
-            for ($j = 1; $j <= 10; $j++) {
+            for ($j = 1; $j <= 30; $j++) {
                 $weight = new Weight();
                 $weight->user_id = $i;
                 $weight->measure_at = '2023-01-' . str_pad($j, 2, '0', STR_PAD_LEFT);
@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
 
         // Create body fat records
         for ($i = 1; $i <= 10; $i++) {
-            for ($j = 1; $j <= 10; $j++) {
+            for ($j = 1; $j <= 30; $j++) {
                 $bodyFat = new Fat();
                 $bodyFat->user_id = $i;
                 $bodyFat->measure_at = '2023-01-' . str_pad($j, 2, '0', STR_PAD_LEFT);
@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
 
         // Create muscle mass records
         for ($i = 1; $i <= 10; $i++) {
-            for ($j = 1; $j <= 10; $j++) {
+            for ($j = 1; $j <= 30; $j++) {
                 $muscleMass = new Muscle();
                 $muscleMass->user_id = $i;
                 $muscleMass->measure_at = '2023-01-' . str_pad($j, 2, '0', STR_PAD_LEFT);
