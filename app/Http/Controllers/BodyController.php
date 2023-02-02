@@ -18,7 +18,7 @@ class BodyController extends Controller
      */
     public function index()
     {
-        //
+        return view('body.index');
     }
 
     /**
