@@ -7,6 +7,7 @@ use Validator;
 use App\Models\Fat;
 use App\Models\Muscle;
 use App\Models\Weight;
+use Illuminate\Support\Facades\Auth;
 
 class BodyController extends Controller
 {
@@ -17,7 +18,7 @@ class BodyController extends Controller
      */
     public function index()
     {
-        //
+        return view('body.index');
     }
 
     /**
@@ -64,8 +65,13 @@ class BodyController extends Controller
                 ->withInput();
         }
         // create()は最初から用意されている関数
-        // 戻り値は挿入されたレコードの情報
-        $result = BodyController::create($request->all());
+
+        $data = $request->merge(['user_id' => Auth::user()->id])->all();
+
+        $fat_result = Fat::create($request->all());
+        $weight_result = Weight::create($request->all());
+        $muscle_result = Muscle::create($request->all());
+
         // ルーティング「todo.index」にリクエスト送信（一覧ページに移動）
         return redirect()->route('dashboard');
     }

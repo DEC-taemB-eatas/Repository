@@ -4,10 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\User;
-use App\Models\Weight;
-use App\Models\Fat;
-use App\Models\Muscle;
 
 class DatabaseSeeder extends Seeder
 {
@@ -57,7 +53,5 @@ class DatabaseSeeder extends Seeder
                 $muscleMass->save();
             }
         }
-
-
     }
 }
