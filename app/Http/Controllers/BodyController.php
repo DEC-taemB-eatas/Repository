@@ -28,12 +28,14 @@ class BodyController extends Controller
         $weights = User::query()
             ->find(Auth::user()->id)
             ->userWeights()
-            ->orderByDesc('measure_at');
+            ->orderByDesc('measure_at')
+            ->paginate(5);
 
         $muscles = User::query()
             ->find(Auth::user()->id)
             ->userMuscles()
-            ->orderByDesc('measure_at');
+            ->orderByDesc('measure_at')
+            ->paginate(5);
 
         //ddd($fats);
 
