@@ -7,6 +7,7 @@ use Validator;
 use App\Models\Fat;
 use App\Models\Muscle;
 use App\Models\Weight;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class BodyController extends Controller
@@ -18,7 +19,27 @@ class BodyController extends Controller
      */
     public function index()
     {
-        return view('body.index');
+        $fats = User::query()
+            ->find(Auth::user()->id)
+            ->userFats()
+            ->orderByDesc('measure_at')
+            ->paginate(5);
+
+        $weights = User::query()
+            ->find(Auth::user()->id)
+            ->userWeights()
+            ->orderByDesc('measure_at')
+            ->paginate(5);
+
+        $muscles = User::query()
+            ->find(Auth::user()->id)
+            ->userMuscles()
+            ->orderByDesc('measure_at')
+            ->paginate(5);
+
+        //ddd($fats);
+
+        return view('body.index', compact('weights', 'muscles', 'fats'));
     }
 
     /**

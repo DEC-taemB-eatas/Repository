@@ -6,10 +6,89 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:w-8/12 md:w-1/2 lg:w-5/12">
+        <div class="max-w-7xl mx-auto sm:w-10/12 md:w-8/10 lg:w-8/12">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    @include('common.errors')
+                    <table class="text-center w-full border-collapse">
+                        <thead>
+                            <tr>
+                                <th
+                                    class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">
+                                    weight</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($weights as $weight)
+                                <tr class="hover:bg-grey-lighter">
+                                    <td class="py-4 px-6 border-b border-grey-light">
+                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $weight->weight }}</h3>
+                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $weight->measure_at }}
+                                        </h3>
+
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:w-10/12 md:w-8/10 lg:w-8/12">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <table class="text-center w-full border-collapse">
+                        <thead>
+                            <tr>
+                                <th
+                                    class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">
+                                    fats</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($fats as $fat)
+                                <tr class="hover:bg-grey-lighter">
+                                    <td class="py-4 px-6 border-b border-grey-light">
+                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $fat->fat }}</h3>
+                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $fat->measure_at }}
+                                        </h3>
+
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:w-10/12 md:w-8/10 lg:w-8/12">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <table class="text-center w-full border-collapse">
+                        <thead>
+                            <tr>
+                                <th
+                                    class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">
+                                    muscles</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($muscles as $muscle)
+                                <tr class="hover:bg-grey-lighter">
+                                    <td class="py-4 px-6 border-b border-grey-light">
+                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $muscle->muscle }}
+                                        </h3>
+                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $muscle->measure_at }}
+                                        </h3>
+
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
