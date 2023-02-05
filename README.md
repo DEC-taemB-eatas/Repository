@@ -98,3 +98,15 @@ DB_PASSWORD=
 ```
 ./vendor/bin/sail down
 ```
+
+## npm run build ができないとき
+
+- public配下にmanifest.jsonを配置する
+- 一度中身を削除する
+```rm -rf node_modules/```
+- 再インストールする
+``` npm install ```
+``` yarn install```
+
+その後```npm run build```してみる
+    
