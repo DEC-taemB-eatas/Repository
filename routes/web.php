@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BodyController;
+use App\Http\Controllers\ChartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +15,18 @@ use App\Http\Controllers\BodyController;
 |
 */
 
+// bodyコントローラーの基本処理はこれでいい感じにできる
 Route::resource('body', BodyController::class);
+
+// chartコントローラーのルーティング 
+Route::get('/chart/edit', [ChartController::class, 'edit'])->name('chart.edit');
+Route::post('/chart/update', [ChartController::class, 'update'])->name('chart.update');
+
+
+
+
+
+
 
 Route::get('/', function () {
     return view('welcome');
