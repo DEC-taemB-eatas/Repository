@@ -26,6 +26,12 @@
                         {{ __('Index') }}
                     </x-nav-link>
                 </div>
+                <!-- 🔽 質問項目入力画面へのリンク -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <x-nav-link :href="route('chart.edit')" :active="request()->routeIs('chart.edit')">
+                    {{ __('質問項目') }}
+                </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -98,6 +104,12 @@
             <x-responsive-nav-link :href="route('body.index')" :active="request()->routeIs('body.index')">
                 {{ __('Index') }}
             </x-responsive-nav-link>
+        </div>
+        <!-- 🔽 質問項目入力画面へのリンク -->
+        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <x-responsive-nav-link :href="route('chart.edit')" :active="request()->routeIs('chart.edit')">
+                    {{ __('質問項目') }}
+                </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
