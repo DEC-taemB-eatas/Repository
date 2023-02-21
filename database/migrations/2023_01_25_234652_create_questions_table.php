@@ -97,6 +97,7 @@ return new class extends Migration
             $table->integer("q24_8")->nullable();;
             $table->integer("q24_9")->nullable();;
             $table->integer("q24_10")->nullable();;
+            $table->float("height")->default(170);
             $table->timestamps();
         });
     }
