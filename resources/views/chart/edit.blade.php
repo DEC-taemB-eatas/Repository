@@ -10,61 +10,60 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     @include('common.errors')
-                    {{$questions->user_id}}
                     <form class="mb-6" action="{{ route('chart.update') }}" method="POST">
                         @csrf
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q1 食事の時間は決まっていますか？ {{$questions -> q1}}</label>
+                            Q1 食事の時間は決まっていますか？ </label>
                             <label><input type="radio" name="q1" value=0 <?php if($questions->q1 === 0){print "checked";}?>>はい</label>
                             <label><input type="radio" name="q1" value=1 <?php if($questions->q1 === 1){print "checked";}?>>いいえ</label>
                         </div>
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q2 朝食をほぼ毎日とりますか？ {{$questions -> q2}} </label>
+                            Q2 朝食をほぼ毎日とりますか？  </label>
                             <label><input type="radio" name="q2" value=0 <?php if($questions->q2 === 0){print "checked";}?>>はい</label>
                             <label><input type="radio" name="q2" value=1 <?php if($questions->q2 === 1){print "checked";}?>>いいえ</label>
                         </div>
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q3 寝る2時間以内に食事をしていますか？ {{$questions -> q3}}</label>
+                            Q3 寝る2時間以内に食事をしていますか？</label>
                             <label><input type="radio" name="q3" value=0 <?php if($questions->q3 === 0){print "checked";}?>>はい</label>
                             <label><input type="radio" name="q3" value=1 <?php if($questions->q3 === 1){print "checked";}?>>いいえ</label>
                         </div>
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q4 よく噛んでゆっくり食べるようにしていますか？ {{$questions -> q4}}</label>
+                            Q4 よく噛んでゆっくり食べるようにしていますか？ </label>
                             <label><input type="radio" name="q4" value=0 <?php if($questions->q4 === 0){print "checked";}?>>はい</label>
                             <label><input type="radio" name="q4" value=1 <?php if($questions->q4 === 1){print "checked";}?>>いいえ</label>
                         </div>
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q5 バランスの良い食事をしていますか？ {{$questions -> q5}}</label>
+                            Q5 バランスの良い食事をしていますか？ </label>
                             <label><input type="radio" name="q5" value=0 <?php if($questions->q5 === 0){print "checked";}?>>はい</label>
                             <label><input type="radio" name="q5" value=1 <?php if($questions->q5 === 1){print "checked";}?>>いいえ</label>
                         </div>
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q6 糖分の入った飲み物を定期的に飲みますか？ {{$questions -> q6}}</label>
+                            Q6 糖分の入った飲み物を定期的に飲みますか？ </label>
                             <label><input type="radio" name="q6" value=0 <?php if($questions->q6 === 0){print "checked";}?>>はい</label>
                             <label><input type="radio" name="q6" value=1 <?php if($questions->q6 === 1){print "checked";}?>>いいえ</label>
                         </div>
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q7 習慣的に間食をしていますか？ {{$questions -> q7}}</label>
+                            Q7 習慣的に間食をしていますか？ </label>
                             <label><input type="radio" name="q7" value=0 <?php if($questions->q7 === 0){print "checked";}?>>はい</label>
                             <label><input type="radio" name="q7" value=1 <?php if($questions->q7 === 1){print "checked";}?>>いいえ</label>
                         </div>
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q8 塩分の多い食材や濃い味付けのものを毎日食べていますか？ {{$questions -> q1}}</label>
+                            Q8 塩分の多い食材や濃い味付けのものを毎日食べていますか？ </label>
                             <label><input type="radio" name="q8" value=0 <?php if($questions->q8 === 0){print "checked";}?>>はい</label>
                             <label><input type="radio" name="q8" value=1 <?php if($questions->q8 === 1){print "checked";}?>>いいえ</label>
                         </div>
@@ -85,14 +84,14 @@
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q10 習慣的にお酒を飲みますか？ {{$questions -> q1}}</label>
+                            Q10 習慣的にお酒を飲みますか？ </label>
                             <label><input type="radio" name="q10" value=0 <?php if($questions->q10 === 0){print "checked";}?>>はい</label>
                             <label><input type="radio" name="q10" value=1 <?php if($questions->q10 === 1){print "checked";}?>>いいえ</label>
                         </div>
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q11 食事は主に誰が作りますか？ {{$questions -> q11}}</label>
+                            Q11 食事は主に誰が作りますか？ </label>
                             <label><input type="radio" name="q11" value=0 <?php if($questions->q11 === 0){print "checked";}?>>自分</label>
                             <label><input type="radio" name="q11" value=1 <?php if($questions->q11 === 1){print "checked";}?>>自分以外</label>
                             <label><input type="radio" name="q11" value=2 <?php if($questions->q11 === 2){print "checked";}?>>決まっていない</label>
@@ -100,14 +99,14 @@
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q12 これまでにダイエットやトレーニングで食生活を変えようとした経験はありますか？ {{$questions -> q1}}</label>
+                            Q12 これまでにダイエットやトレーニングで食生活を変えようとした経験はありますか？ </label>
                             <label><input type="radio" name="q12" value=0 <?php if($questions->q12 === 0){print "checked";}?>>はい</label>
                             <label><input type="radio" name="q12" value=1 <?php if($questions->q12 === 1){print "checked";}?>>いいえ</label>
                         </div>
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q13 このサービスをご利用される目的は何ですか？ (複数選択可) {{$questions -> q4}}{{$questions -> q5}}{{$questions -> q6}}{{$questions -> q7}}</label>
+                            Q13 このサービスをご利用される目的は何ですか？ (複数選択可) </label>
                             <label><input type="hidden" name="q13_1" value="0" >
                             <input type="checkbox" name="q13_1" value = "1" <?php if($questions->q13_1 === 1){print "checked";}?> >ダイエット</label>
                             <label><input type="hidden" name="q13_2" value="0" >
@@ -128,14 +127,14 @@
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q14 体重を定期的に測定していますか？ {{$questions -> q1}}</label>
+                            Q14 体重を定期的に測定していますか？ </label>
                             <label><input type="radio" name="q14" value=0 <?php if($questions->q14 === 0){print "checked";}?>>はい</label>
                             <label><input type="radio" name="q14" value=1 <?php if($questions->q14 === 1){print "checked";}?>>いいえ</label>
                         </div>
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q15 体重を定期的に測定していますか？ {{$questions -> q1}}</label>
+                            Q15 体重を定期的に測定していますか？ </label>
                             <label><input type="radio" name="q15" value=0 <?php if($questions->q15 === 0){print "checked";}?>>3Kg増加</label>
                             <label><input type="radio" name="q15" value=1 <?php if($questions->q15 === 1){print "checked";}?>>ほぼ変わらない</label>
                             <label><input type="radio" name="q15" value=2 <?php if($questions->q15 === 2){print "checked";}?>>3Kg減少</label>
@@ -143,7 +142,7 @@
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q16 現状の体重について、どうしたいですか？ {{$questions -> q1}}</label>
+                            Q16 現状の体重について、どうしたいですか？ </label>
                             <label><input type="radio" name="q16" value=0 <?php if($questions->q16 === 0){print "checked";}?>>できれば減らしたい</label>
                             <label><input type="radio" name="q16" value=1 <?php if($questions->q16 === 1){print "checked";}?>>現状を維持したい</label>
                             <label><input type="radio" name="q16" value=2 <?php if($questions->q16 === 2){print "checked";}?>>できれば増やしたい</label>
@@ -151,7 +150,7 @@
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q17 １日の平均睡眠時間はどのくらいですか？ {{$questions -> q1}}</label>
+                            Q17 １日の平均睡眠時間はどのくらいですか？ </label>
                             <label><input type="radio" name="q17" value=0 <?php if($questions->q17 === 0){print "checked";}?>>5時間未満</label>
                             <label><input type="radio" name="q17" value=1 <?php if($questions->q17 === 1){print "checked";}?>>5～6時間未満</label>
                             <label><input type="radio" name="q17" value=0 <?php if($questions->q17 === 2){print "checked";}?>>6～7時間未満</label>
@@ -161,7 +160,7 @@
 
                         <div class="flex flex-col mb-4">
                         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                            Q18 お通じの状態はどうですか？ {{$questions -> q1}}</label>
+                            Q18 お通じの状態はどうですか？ </label>
                             <label><input type="radio" name="q19" value=0 <?php if($questions->q19 === 0){print "checked";}?>>1日に1回以上</label>
                             <label><input type="radio" name="q19" value=1 <?php if($questions->q19 === 1){print "checked";}?>>2~3日に1回以上</label>
                             <label><input type="radio" name="q19" value=2 <?php if($questions->q19 === 2){print "checked";}?>>週1回以下</label>
@@ -317,22 +316,17 @@
 
                         <script> 
                             //javascript でチェックボックスで食べないを選択すると、朝食、昼食、夕食のチェックが外れるようにした
-                            document.querySelector("input[name=q9_1]").addEventListener("click", function() {
-                                if (this.checked) {
-                                    document.querySelector("input[name=q9_2]").checked = false;
-                                    document.querySelector("input[name=q9_3]").checked = false;
-                                    document.querySelector("input[name=q9_4]").checked = false;
-                                }
-                                });
+                            // 「食べない」にチェックが入った場合の処理
+                            if (document.getElementsByName("q9_1")[0].checked) {
+                            document.getElementsByName("q9_2")[0].checked = false; // 朝食のチェックを外す
+                            document.getElementsByName("q9_3")[0].checked = false; // 昼食のチェックを外す
+                            document.getElementsByName("q9_4")[0].checked = false; // 夕食のチェックを外す
+                            }
 
-                            document.querySelectorAll("input[name='q9_2'], input[name='q9_3'], input[name='q9_4']").forEach(function(elem) {
-                                elem.addEventListener("click", function() {
-                                document.querySelector("input[name='q9_1']").checked = false;
-                                });
-                            });
-                            
-                            
-                            
+                            // 朝食、昼食、夕食のいずれかにチェックが入った場合の処理
+                            if (document.getElementsByName("q9_2")[0].checked || document.getElementsByName("q9_3")[0].checked || document.getElementsByName("q9_4")[0].checked) {
+                            document.getElementsByName("q9_1")[0].checked = false; // 「食べない」のチェックを外す
+                            }
                         </script>
                     </form>
                 </div>
