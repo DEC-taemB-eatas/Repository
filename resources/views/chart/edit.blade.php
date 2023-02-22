@@ -153,9 +153,9 @@
                             Q17 １日の平均睡眠時間はどのくらいですか？ </label>
                             <label><input type="radio" name="q17" value=0 <?php if($questions->q17 === 0){print "checked";}?>>5時間未満</label>
                             <label><input type="radio" name="q17" value=1 <?php if($questions->q17 === 1){print "checked";}?>>5～6時間未満</label>
-                            <label><input type="radio" name="q17" value=0 <?php if($questions->q17 === 2){print "checked";}?>>6～7時間未満</label>
-                            <label><input type="radio" name="q17" value=0 <?php if($questions->q17 === 3){print "checked";}?>>7～8時間未満</label>
-                            <label><input type="radio" name="q17" value=0 <?php if($questions->q17 === 4){print "checked";}?>>8時間以上</label>
+                            <label><input type="radio" name="q17" value=2 <?php if($questions->q17 === 2){print "checked";}?>>6～7時間未満</label>
+                            <label><input type="radio" name="q17" value=3 <?php if($questions->q17 === 3){print "checked";}?>>7～8時間未満</label>
+                            <label><input type="radio" name="q17" value=4 <?php if($questions->q17 === 4){print "checked";}?>>8時間以上</label>
                         </div>
 
                         <div class="flex flex-col mb-4">
@@ -307,6 +307,13 @@
                             <input type="checkbox" name="q24_10" value="1" <?php if($questions->q24_10 === 1){print "checked";}?>>その他</label>
                         </div>
 
+                        <div class="flex flex-col mb-4">
+                            <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
+                            Qあなたの身長は何㎝ですか？ </label>
+                            <input  required type="number" step="0.1" value= <?= $questions->height ?>
+                                name="height">
+                        </div>
+
                         
 
                         <button type="submit"
@@ -315,18 +322,7 @@
                         </button>
 
                         <script> 
-                            //javascript でチェックボックスで食べないを選択すると、朝食、昼食、夕食のチェックが外れるようにした
-                            // 「食べない」にチェックが入った場合の処理
-                            if (document.getElementsByName("q9_1")[0].checked) {
-                            document.getElementsByName("q9_2")[0].checked = false; // 朝食のチェックを外す
-                            document.getElementsByName("q9_3")[0].checked = false; // 昼食のチェックを外す
-                            document.getElementsByName("q9_4")[0].checked = false; // 夕食のチェックを外す
-                            }
-
-                            // 朝食、昼食、夕食のいずれかにチェックが入った場合の処理
-                            if (document.getElementsByName("q9_2")[0].checked || document.getElementsByName("q9_3")[0].checked || document.getElementsByName("q9_4")[0].checked) {
-                            document.getElementsByName("q9_1")[0].checked = false; // 「食べない」のチェックを外す
-                            }
+                            
                         </script>
                     </form>
                 </div>
