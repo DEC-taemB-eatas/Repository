@@ -19,6 +19,7 @@ return new class extends Migration
             $table->float("bmi");
             $table->integer("type");
             $table->integer("term");
+            $table->timestamps();
         });
     }
 
