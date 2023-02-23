@@ -20,7 +20,7 @@ class Target extends Model
     public function getTargetList($type):Array
     {
         $targets = Target::query()
-            ->whereType(0)//本当はここにタイプの変数が入る
+            ->whereType($type)//本当はここにタイプの変数が入る
             ->orderByDesc('term')
             ->get();
 
