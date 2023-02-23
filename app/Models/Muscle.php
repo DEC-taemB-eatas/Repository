@@ -20,7 +20,7 @@ class Muscle extends Model
         $muscles = User::query()
             ->find(Auth::user()->id)
             ->userMuscles()
-            ->orderByDesc('measure_at')
+            ->orderBy('measure_at')
             ->get();
 
         //順番に配列に代入
