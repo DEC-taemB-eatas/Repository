@@ -18,13 +18,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($weights as $weight)
+                            @foreach ($body['weights']['data'] as $weight)
                                 <tr class="hover:bg-grey-lighter">
                                     <td class="py-4 px-6 border-b border-grey-light">
-                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $weight->weight }}</h3>
-                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $weight->measure_at }}
-                                        </h3>
-
+                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $weight }}</h3>
                                     </td>
                                 </tr>
                             @endforeach
@@ -47,13 +44,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($fats as $fat)
+                            @foreach ($body['fats']['data'] as $fat)
                                 <tr class="hover:bg-grey-lighter">
                                     <td class="py-4 px-6 border-b border-grey-light">
-                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $fat->fat }}</h3>
-                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $fat->measure_at }}
-                                        </h3>
-
+                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $fat }}</h3>
                                     </td>
                                 </tr>
                             @endforeach
@@ -76,14 +70,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($muscles as $muscle)
+                            @foreach ($body['muscles']['data'] as $muscle)
                                 <tr class="hover:bg-grey-lighter">
                                     <td class="py-4 px-6 border-b border-grey-light">
-                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $muscle->muscle }}
-                                        </h3>
-                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $muscle->measure_at }}
-                                        </h3>
-
+                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{ $muscle }}</h3>
                                     </td>
                                 </tr>
                             @endforeach
