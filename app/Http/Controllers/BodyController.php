@@ -8,6 +8,7 @@ use App\Models\Fat;
 use App\Models\Muscle;
 use App\Models\Weight;
 use App\Models\User;
+use App\Models\Target;
 use Illuminate\Support\Facades\Auth;
 
 class BodyController extends Controller
@@ -18,11 +19,12 @@ class BodyController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function __construct(Weight $weight,Muscle $muscle,Fat $fat)
+     public function __construct(Weight $weight,Muscle $muscle,Fat $fat,Target $target)
     {
         $this -> weight = $weight;
         $this -> muscle = $muscle;
         $this -> fat = $fat;
+        $this -> target = $target;
 
     }
 
@@ -31,14 +33,16 @@ class BodyController extends Controller
         $fats = $this -> fat -> getFatList();
         $weights = $this -> weight -> getWeightList();        
         $muscles = $this -> muscle -> getMuscleList();
+        $targets = $this -> target -> getTargetList(0);//本当はここにタイプを入れる
 
         $body = array(
             'fats' => $fats,
             'weights' => $weights,
-            'muscles' => $muscles
+            'muscles' => $muscles,
+            'target' => $targets
         );
         
-        //dd($body);
+        dd($body);
 
         return view('body.index', compact('body'));
     }
