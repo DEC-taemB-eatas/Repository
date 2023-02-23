@@ -21,28 +21,34 @@ class Target extends Model
 
     public function getTargetList($type):Array
     {
-        function convertToWeight($n,$height){
-            return($n*$height*$height);
-        }
-
+        //目標を取得
         $targets = Target::query()
             ->whereType($type)//本当はここにタイプの変数が入る
             ->orderBy('term')
             ->get();
-
+        
+        //体重を取得
+        $weights = User::query()
+            ->find(Auth::user()->id)
+            ->userWeights()
+            ->orderBy('measure_at')
+            ->first();
+        $initial_weight = $weights -> weight;
+        
         //身長を取得
         $questions = User::query()
             ->find(Auth::user()->id)
             ->userQuestions()
-            ->first();        
-
+            ->first();
         $height = $questions -> height;
         $height2 = $height*$height/10000;//身長の二乗（単位はm）
 
+        
         //順番に配列に代入
         foreach($targets as $target){
             $bmi = $target -> bmi;//bmiだけ取り出す
-            $weight = $bmi*$height2;//身長の二乗を掛けて体重に変換
+            $weight = round($bmi * $height2 + $initial_weight,2) ;//身長の二乗を掛けて体重に変換後、最初の体重を足す
+            //配列に代入
             $data_lis[] =  $weight;
             $date_lis[] = $target -> term;
         }
