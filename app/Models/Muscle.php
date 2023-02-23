@@ -15,7 +15,7 @@ class Muscle extends Model
         'updated_at',
     ];
 
-    public function muscle():Array
+    public function getMuscleList():Array
     {
         $weights = User::query()
             ->find(Auth::user()->id)
