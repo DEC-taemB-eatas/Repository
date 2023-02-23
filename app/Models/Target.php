@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Target extends Model
 {
     use HasFactory;
+    protected $guarded = [
+        'id',
+        'bmi',
+        'type'
+        'term',
+        'created_at',
+        'updated_at',
+    ];
 }
