@@ -11,9 +11,30 @@ class Target extends Model
     protected $guarded = [
         'id',
         'bmi',
-        'type'
+        'type',
         'term',
         'created_at',
         'updated_at',
     ];
+
+    public function getTargetList($type):Array
+    {
+        $targets = Target::query()
+            ->whereType($type)//本当はここにタイプの変数が入る
+            ->orderByDesc('term')
+            ->get();
+
+        //順番に配列に代入
+        foreach($targets as $target){
+            $data_lis[] = $target -> bmi;
+            $date_lis[] = $target -> term;
+        }
+
+        $data = array(
+            'data' => $data_lis,
+            'date' => $date_lis
+        );
+
+        return $data;
+    }
 }
