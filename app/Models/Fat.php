@@ -15,7 +15,7 @@ class Fat extends Model
         'updated_at',
     ];
 
-    public function fat():Array
+    public function getFatList():Array
         {
             $fats = User::query()
                 ->find(Auth::user()->id)
