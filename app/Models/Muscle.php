@@ -17,7 +17,7 @@ class Muscle extends Model
 
     public function getMuscleList():Array
     {
-        $weights = User::query()
+        $muscles = User::query()
             ->find(Auth::user()->id)
             ->userMuscles()
             ->orderByDesc('measure_at')
