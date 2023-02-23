@@ -15,7 +15,7 @@ class Weight extends Model
         'updated_at',
     ];
 
-    public function weight():Array
+    public function getWeightList():Array
     {
         $weights = User::query()
             ->find(Auth::user()->id)
