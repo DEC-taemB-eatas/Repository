@@ -18,32 +18,29 @@ class BodyController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function __construct(Weight $weight)
+     public function __construct(Weight $weight,Muscle $muscle,Fat $fat)
     {
-        $this->weight = $weight;
+        $this -> weight = $weight;
+        $this -> muscle = $muscle;
+        $this -> fat = $fat;
+
     }
 
     public function index()
     {
-        $fats = User::query()
-            ->find(Auth::user()->id)
-            ->userFats()
-            ->orderByDesc('measure_at')
-            ->take(10)
-            ->get();
+        $fats = $this -> fat -> getFatList();
+        $weights = $this -> weight -> getWeightList();        
+        $muscles = $this -> muscle -> getMuscleList();
 
-        $weights = $this -> weight -> weight();        
+        $body = array(
+            'fats' => $fats,
+            'weights' => $weights,
+            'muscles' => $muscles
+        );
+        
+        //dd($body);
 
-        $muscles = User::query()
-            ->find(Auth::user()->id)
-            ->userMuscles()
-            ->orderByDesc('measure_at')
-            ->take(10)
-            ->get();
-
-        dd($weights);
-
-        return view('body.index', compact('weights', 'muscles', 'fats','weight_lis'));
+        return view('body.index', compact('body'));
     }
 
     /**
