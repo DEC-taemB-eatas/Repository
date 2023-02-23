@@ -21,7 +21,7 @@ class Target extends Model
     {
         $targets = Target::query()
             ->whereType($type)//本当はここにタイプの変数が入る
-            ->orderByDesc('term')
+            ->orderBy('term')
             ->get();
 
         //順番に配列に代入
