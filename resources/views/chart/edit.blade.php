@@ -314,6 +314,13 @@
                                 name="height">
                         </div>
 
+                        <div class="flex flex-col mb-4">
+                            <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
+                            Qあなたの年齢を教えてください </label>
+                            <input  required type="number" step="1" value= <?= $questions->age ?>
+                                name="age">
+                        </div>
+
                         
 
                         <button type="submit"
