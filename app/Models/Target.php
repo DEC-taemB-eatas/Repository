@@ -11,7 +11,7 @@ class Target extends Model
     protected $guarded = [
         'id',
         'bmi',
-        'type'
+        'type',
         'term',
         'created_at',
         'updated_at',
