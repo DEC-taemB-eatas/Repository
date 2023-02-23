@@ -25,9 +25,15 @@ class Muscle extends Model
 
         //順番に配列に代入
         foreach($muscles as $muscle){
-            $muscle_lis[] = $muscle -> muscle;
+            $data_lis[] = $muscle -> muscle;
+            $date_lis[] = $muscle -> measure_at;
         }
 
-        return $muscle_lis;
+        $data = array(
+            'data' => $data_lis,
+            'date' => $date_lis
+        );
+
+        return $data;
     }
 }

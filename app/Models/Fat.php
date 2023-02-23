@@ -25,9 +25,16 @@ class Fat extends Model
 
             //順番に配列に代入
             foreach($fats as $fat){
-                $fat_lis[] = $fat -> fat;
-            }
-
-            return $fat_lis;
+                $data_lis[] = $fat -> fat;
+                $date_lis[] = $fat -> measure_at;
         }
+
+        $data = array(
+            'data' => $data_lis,
+            'date' => $date_lis
+        );
+
+        return $data;
+    }
+
 }

@@ -25,10 +25,16 @@ class Weight extends Model
 
         //順番に配列に代入
         foreach($weights as $weight){
-            $weight_lis[] = $weight -> weight;
+            $data_lis[] = $weight -> weight;
+            $date_lis[] = $weight -> measure_at;
         }
 
-        return $weight_lis;
+        $data = array(
+            'data' => $data_lis,
+            'date' => $date_lis
+        );
+
+        return $data;
     }
 
 
