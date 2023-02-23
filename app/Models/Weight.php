@@ -20,7 +20,7 @@ class Weight extends Model
         $weights = User::query()
             ->find(Auth::user()->id)
             ->userWeights()
-            ->orderByDesc('measure_at')
+            ->orderBy('measure_at')
             ->get();
 
         //順番に配列に代入
