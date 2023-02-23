@@ -70,7 +70,7 @@ class BodyController extends Controller
             'weight' => 'numeric | between:0,150',
             'fat' => 'numeric | between:0,100',
             'muscle' => 'numeric | min:0',
-            'measured_at' => 'date',
+            'measure_at' => 'date|required|unique:weights,measure_at|unique:fats,measure_at|unique:muscles,measure_at',
         ];
 
         $message = [
@@ -80,7 +80,8 @@ class BodyController extends Controller
             'fat.between' => '0~100で入力してください',
             'muscle.numeric' => '数字で入力してください',
             'muscle.min' => '0~で入力してください',
-            'measured_at.date' => '日付を入力してください',
+            'measure_at.date' => '日付を入力してください',
+            'measure_at.unique'=>'その日はすでに入力されています'
         ];
 
         $validator = Validator::make($request->all(), $rules, $message);
