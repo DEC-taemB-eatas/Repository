@@ -42,7 +42,7 @@ class BodyController extends Controller
             'target' => $targets
         );
         
-        dd($body);
+        //dd($body);
 
         return view('body.index', compact('body'));
     }
