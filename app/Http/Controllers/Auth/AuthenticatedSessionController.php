@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Models\Scores;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -28,6 +29,13 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        
+        $scores = Scores::where('user_id', Auth::user()->id)->first();
+        // scoresテーブルに自分のレコードを持っていないユーザーがloginしたら自分用のレコードを追加する処理
+        if (!$scores){
+        $scores = new Scores;
+        $scores->user_id = Auth::user()->id;
+        $scores->save();}
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }

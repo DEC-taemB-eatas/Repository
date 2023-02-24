@@ -8,6 +8,7 @@ use App\Models\Fat;
 use App\Models\Muscle;
 use App\Models\Weight;
 use App\Models\User;
+use App\Models\Target;
 use Illuminate\Support\Facades\Auth;
 
 class BodyController extends Controller
@@ -17,32 +18,33 @@ class BodyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct(Weight $weight,Muscle $muscle,Fat $fat,Target $target)
+    {
+        $this -> weight = $weight;
+        $this -> muscle = $muscle;
+        $this -> fat = $fat;
+        $this -> target = $target;
+
+    }
+
     public function index()
     {
-        $fats = User::query()
-            ->find(Auth::user()->id)
-            ->userFats()
-            ->orderByDesc('measure_at')
-            ->take(10)
-            ->get();
+        $fats = $this -> fat -> getFatList();
+        $weights = $this -> weight -> getWeightList();        
+        $muscles = $this -> muscle -> getMuscleList();
+        $targets = $this -> target -> getTargetList(0);//本当はここにタイプを入れる
 
-        $weights = User::query()
-            ->find(Auth::user()->id)
-            ->userWeights()
-            ->orderByDesc('measure_at')
-            ->take(10)
-            ->get();
+        $body = array(
+            'fats' => $fats,
+            'weights' => $weights,
+            'muscles' => $muscles,
+            'target' => $targets
+        );
+        
+        //dd($body);
 
-        $muscles = User::query()
-            ->find(Auth::user()->id)
-            ->userMuscles()
-            ->orderByDesc('measure_at')
-            ->take(10)
-            ->get();
-
-        //ddd($fats);
-
-        return view('body.index', compact('weights', 'muscles', 'fats'));
+        return view('body.index', compact('body'));
     }
 
     /**
@@ -68,7 +70,7 @@ class BodyController extends Controller
             'weight' => 'numeric | between:0,150',
             'fat' => 'numeric | between:0,100',
             'muscle' => 'numeric | min:0',
-            'measured_at' => 'date',
+            'measure_at' => 'date|required|unique:weights,measure_at|unique:fats,measure_at|unique:muscles,measure_at',
         ];
 
         $message = [
@@ -78,7 +80,8 @@ class BodyController extends Controller
             'fat.between' => '0~100で入力してください',
             'muscle.numeric' => '数字で入力してください',
             'muscle.min' => '0~で入力してください',
-            'measured_at.date' => '日付を入力してください',
+            'measure_at.date' => '日付を入力してください',
+            'measure_at.unique'=>'その日はすでに入力されています'
         ];
 
         $validator = Validator::make($request->all(), $rules, $message);
