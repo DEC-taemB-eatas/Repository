@@ -17,7 +17,7 @@ class CommentSeeder extends Seeder
     {
         $this->command->info("コメントデータの作成を開始します...");
 
-        $json = file_get_contents(__DIR__ . '/comment/target.json');
+        $json = file_get_contents(__DIR__ . '/data/comment.json');
         $comments = json_decode($json, true);
 
         foreach ($comments['comments'] as $comment) {
