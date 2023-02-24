@@ -35,14 +35,14 @@ class BodyController extends Controller
         $fats = $this -> fat -> getFatList();
         $weights = $this -> weight -> getWeightList();        
         $muscles = $this -> muscle -> getMuscleList();
-        $targets = $this -> target -> getTargetList(0);//本当はここにタイプを入れる
+        $targets = $this -> target -> getTargetList();//本当はここにタイプを入れる
         $comments = $this -> comment -> getComment();
 
         $body = array(
             'fats' => $fats,
             'weights' => $weights,
             'muscles' => $muscles,
-            'target' => $targets
+            'target' => $targets,
             'comment' => $comments
         );
         
