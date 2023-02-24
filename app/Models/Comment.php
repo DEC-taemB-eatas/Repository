@@ -19,10 +19,11 @@ class Comment extends Model
 
         $type = 1;//これは質問の点数で判定
 
-        $comment = Comment::query()
+        $comments = Comment::query()
             ->find($type)
             ->first();
 
+        $comment = $comments -> comment;
         return $comment;
     }
 }
