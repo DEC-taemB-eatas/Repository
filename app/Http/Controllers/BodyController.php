@@ -10,6 +10,7 @@ use App\Models\Weight;
 use App\Models\User;
 use App\Models\Target;
 use App\Models\Comment;
+use App\Models\Scores;
 use Illuminate\Support\Facades\Auth;
 
 class BodyController extends Controller
@@ -20,13 +21,14 @@ class BodyController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function __construct(Weight $weight,Muscle $muscle,Fat $fat,Target $target,Comment $comment)
+     public function __construct(Weight $weight,Muscle $muscle,Fat $fat,Target $target,Comment $comment,Scores $score)
     {
         $this -> weight = $weight;
         $this -> muscle = $muscle;
         $this -> fat = $fat;
         $this -> target = $target;
         $this -> comment = $comment;
+        $this -> score = $score;
 
     }
 
@@ -37,13 +39,15 @@ class BodyController extends Controller
         $muscles = $this -> muscle -> getMuscleList();
         $targets = $this -> target -> getTargetList();//本当はここにタイプを入れる
         $comments = $this -> comment -> getComment();
+        $scores = $this -> score -> getScore();
 
         $body = array(
             'fats' => $fats,
             'weights' => $weights,
             'muscles' => $muscles,
             'target' => $targets,
-            'comment' => $comments
+            'comment' => $comments,
+            'score' => $scores
         );
         
         //dd($body);
