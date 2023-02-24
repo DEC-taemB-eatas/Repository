@@ -23,10 +23,7 @@ class Scores extends Model
             'ability_to_act' => $scores -> ability_to_act,
             'physical_condition' => $scores -> physical_condition
         );
-
+        
         return $data;
-
-
-
     }
 }
