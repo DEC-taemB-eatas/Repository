@@ -14,4 +14,15 @@ class Comment extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function getComment(){
+
+        $type = 1;//これは質問の点数で判定
+
+        $comment = Comment::query()
+            ->find($type)
+            ->first();
+
+        return $comment;
+    }
 }
