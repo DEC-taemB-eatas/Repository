@@ -19,7 +19,7 @@ class Target extends Model
         'updated_at',
     ];
 
-    public function getTargetList($type):Array
+    public function getTargetList():Array
     {
         function getType($age,$initial_bmi){
             if ($age>=50){

@@ -9,6 +9,7 @@ use App\Models\Muscle;
 use App\Models\Weight;
 use App\Models\User;
 use App\Models\Target;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 
 class BodyController extends Controller
@@ -19,12 +20,13 @@ class BodyController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function __construct(Weight $weight,Muscle $muscle,Fat $fat,Target $target)
+     public function __construct(Weight $weight,Muscle $muscle,Fat $fat,Target $target,Comment $comment)
     {
         $this -> weight = $weight;
         $this -> muscle = $muscle;
         $this -> fat = $fat;
         $this -> target = $target;
+        $this -> comment = $comment;
 
     }
 
@@ -33,13 +35,15 @@ class BodyController extends Controller
         $fats = $this -> fat -> getFatList();
         $weights = $this -> weight -> getWeightList();        
         $muscles = $this -> muscle -> getMuscleList();
-        $targets = $this -> target -> getTargetList(0);//本当はここにタイプを入れる
+        $targets = $this -> target -> getTargetList();//本当はここにタイプを入れる
+        $comments = $this -> comment -> getComment();
 
         $body = array(
             'fats' => $fats,
             'weights' => $weights,
             'muscles' => $muscles,
-            'target' => $targets
+            'target' => $targets,
+            'comment' => $comments
         );
         
         //dd($body);
