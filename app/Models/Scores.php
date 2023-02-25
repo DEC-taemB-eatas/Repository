@@ -17,11 +17,17 @@ class Scores extends Model
         ->userScores()
         ->first();
 
+        $sum = $scores -> eating +
+             $scores -> eating_habits +
+             $scores -> ability_to_act +
+             $scores -> physical_condition;
+
         $data = array(
             'eating' => $scores -> eating,
             'eating_habits' => $scores -> eating_habits,
             'ability_to_act' => $scores -> ability_to_act,
-            'physical_condition' => $scores -> physical_condition
+            'physical_condition' => $scores -> physical_condition,
+            'sum' => $sum
         );
         
         return $data;
