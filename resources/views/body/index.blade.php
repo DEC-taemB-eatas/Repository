@@ -212,14 +212,14 @@
 
 
             var mainChart = new Chartist.Line('#chart1', {
-                labels: @json($body['weights']['date']),
+                labels: @json($body['target']['date']),
                 series: [
                     [0],
                     @json($body['weights']['data']),
                     @json($body['target']['data'])
                 ]
             }, {
-                low: 40,
+                low: @json($body['weights']['min'])-0.3,
                 showArea: true,
                 showPoint: false,
                 fullWidth: true,
@@ -245,7 +245,7 @@
                     @json($body['fats']['data']),
                 ]
             }, {
-                low: 10
+                low: @json($body['fats']['min'])-2
             });
 
             var chartScatter = new Chartist.Line('#chart3', {
@@ -254,7 +254,7 @@
                     @json($body['muscles']['data']),
                 ]
             }, {
-                low: 10
+                low: @json($body['muscles']['min'])-3
             });
 
             chartScatter.on('draw', function(data) {
