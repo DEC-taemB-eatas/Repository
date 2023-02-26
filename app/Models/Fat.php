@@ -54,7 +54,8 @@ class Fat extends Model
 
         $data = array(
             'data' => $data_lis_new,
-            'date' => $date_lis_new
+            'date' => $date_lis_new,
+            'min'=> $mins
         );
 
             return $data;

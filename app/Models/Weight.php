@@ -51,10 +51,13 @@ class Weight extends Model
                 $date_lis_new[] = $date_lis_diff[$i];
                 }
             }
+        
+        $min = min($data_lis_new);
 
         $data = array(
             'data' => $data_lis_new,
-            'date' => $date_lis_new
+            'date' => $date_lis_new,
+            'min' => $min
         );
         
         return $data;
