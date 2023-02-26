@@ -57,11 +57,6 @@ class Fat extends Model
             'date' => $date_lis_new
         );
 
-            $data = array(
-                'data' => $data_lis,
-                'date' => $date_lis_diff
-            );
-
             return $data;
     }
 
