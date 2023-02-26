@@ -74,9 +74,11 @@ class Target extends Model
             ->orderBy('term')
             ->get();
         
+        $length = min([$length + 30,90]); //実際の体重データ＋30日で目標データを止める
+
         //順番に配列に代入
         foreach($targets as $i => $target  ){
-            if($i == $length + 30){break;}//実際の体重データ＋30日で目標データを止める
+            if($i == $length){break;}
             $bmi = $target -> bmi;//bmiだけ取り出す
             $weight = round($bmi * $height2 + $initial_weight,2) ;//身長の二乗を掛けて体重に変換後、最初の体重を足す
             //配列に代入

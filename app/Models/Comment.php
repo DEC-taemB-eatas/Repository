@@ -50,6 +50,8 @@ class Comment extends Model
             $comment_lis[]=$comment->comment;
         }
 
+        $comment_lis[] = "目標に向かって改善していきましょう。";
+
         $result = join('。',$comment_lis);
         
         return $result;
