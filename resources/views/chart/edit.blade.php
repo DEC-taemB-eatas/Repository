@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('あなたの生活習慣に関する情報をにゅうりょくしてください') }}
+            {{ __('あなたの生活習慣に関する情報を更新してください') }}
         </h2>
     </x-slot>
 
