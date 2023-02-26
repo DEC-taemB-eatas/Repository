@@ -224,11 +224,8 @@
 
         var mainChart = new Chartist.Line('#chart1', {
             labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-            series: [
-                [1, 5, 2, 5, 4, 3],
-                [2, 3, 4, 8],
-                [2,5,7,9]
-            ]
+            series: 
+                [1, 5, 2, 5, 4, 3]
         }, {
             low: 2,
             showArea: true,

@@ -75,7 +75,7 @@
             <div id="dash-content" class="bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start ">
 
                 <div class="border-b p-3">
-                    <h5 class="font-bold md-6 text-black">Your health points 90/100</h5>
+                    <h5 class="font-bold md-6 text-black">Your health points $body['score']['sum']/100</h5>
                     </h5>
                 </div>
 
@@ -86,7 +86,7 @@
                                 <div class="rounded-full p-3 bg-gray-300"><i class="fa fa-wallet fa-fw fa-inverse text-indigo-500"></i></div>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-bold text-3xl">20/20 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl">{{ $body['score']['eating_habits'] }}/20 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
                                 <h5 class="font-bold text-gray-500">Eating habits</h5>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                                 <div class="rounded-full p-3 bg-gray-300"><i class="fas fa-users fa-fw fa-inverse text-indigo-500"></i></div>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-bold text-3xl">30/40 <span class="text-orange-500"><i class="fas fa-exchange-alt"></i></span></h3>
+                                <h3 class="font-bold text-3xl">{{ $body['score']['eating'] }}/40 <span class="text-orange-500"><i class="fas fa-exchange-alt"></i></span></h3>
                                 <h5 class="font-bold text-gray-500">Eating</h5>
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                                 <div class="rounded-full p-3 bg-gray-300"><i class="fas fa-user-plus fa-fw fa-inverse text-indigo-500"></i></div>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-bold text-3xl"> 20/20<span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl"> {{ $body['score']['ability_to_act'] }}/20<span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
                                 <h5 class="font-bold text-gray-500">Ability to act</h5>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                                 <div class="rounded-full p-3 bg-gray-300"><i class="fas fa-server fa-fw fa-inverse text-indigo-500"></i></div>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-bold text-3xl">30/20</h3>
+                                <h3 class="font-bold text-3xl">{{ $body['score']['physical_condition'] }}/20</h3>
                                 <h5 class="font-bold text-gray-500">Physical condition</h5>
                             </div>
                         </div>
@@ -156,6 +156,20 @@
                             </div>
                             <!--/Graph Card-->
 
+                            <div class="border-b p-3">
+                                <h5 class="font-bold text-black">Review</h5>
+                            </div>
+                            <div class="p-5">
+                                <table class="w-full p-5 text-gray-700">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center text-3xl text-blue-900">{{ $body['comment'] }}</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+
+                            </div>
+
                         </div>
 
                     </div>
@@ -168,49 +182,23 @@
                             <!--Graph Card-->
 
                             <div class="border-b p-3">
-                                <h5 class="font-bold text-black">BMI</h5>
+                                <h5 class="font-bold text-black">Fats</h5>
                             </div>
                             <div class="p-5">
                                 <div class="ct-chart ct-golden-section" id="chart2"></div>
                             </div>
 
+                            <!-- Graph card2 -->
+                            <div class="border-b p-3">
+                                <h5 class="font-bold text-black">Muscles</h5>
+                            </div>
+                            <div class="p-5">
+                                <div class="ct-chart ct-golden-section" id="chart3"></div>
+                            </div>
+
                         </div>
 
                     </div>
-
-                    <!--Table Card-->
-                    <div class="w-full xl:w-1/2 p-6 xl:max-w-4xl border-1-1 border-gray-300">
-                        <div class="border-b p-3">
-                            <h5 class="font-bold text-black">Review</h5>
-                        </div>
-                        <div class="p-5">
-                            <table class="w-full p-5 text-gray-700">
-                                <thead>
-                                    <tr>
-                                        <th class="text-left text-blue-900">Title </th>
-                                        <th class="text-left text-blue-900">Conditions</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>Comments about questionnaire</td>
-                                        <td>Good keep on running</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Comment about BMI</td>
-                                        <td>Good</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Darth Vader</td>
-                                        <td>Dark</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                        </div>
-                    </div>
-                    <!--/table Card-->
 
                 </div>
 
@@ -231,7 +219,7 @@
                     @json($body['target']['data'])
                 ]
             }, {
-                low: {{ $body['weights']['data'][0] - 15}},
+                low: 40,
                 showArea: true,
                 showPoint: false,
                 fullWidth: true,
@@ -257,7 +245,16 @@
                     @json($body['fats']['data']),
                 ]
             }, {
-                low: 5
+                low: 10
+            });
+
+            var chartScatter = new Chartist.Line('#chart3', {
+                labels: @json($body['muscles']['date']),
+                series: [
+                    @json($body['muscles']['data']),
+                ]
+            }, {
+                low: 10
             });
 
             chartScatter.on('draw', function(data) {
