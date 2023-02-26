@@ -35,9 +35,11 @@ class BodyController extends Controller
     public function index()
     {
         $fats = $this -> fat -> getFatList();
-        $weights = $this -> weight -> getWeightList();        
+        $weights = $this -> weight -> getWeightList();     
+        $length = count($weights['date']);
+
         $muscles = $this -> muscle -> getMuscleList();
-        $targets = $this -> target -> getTargetList();//本当はここにタイプを入れる
+        $targets = $this -> target -> getTargetList($length);
         $comments = $this -> comment -> getComment();
         $scores = $this -> score -> getScore();
 
