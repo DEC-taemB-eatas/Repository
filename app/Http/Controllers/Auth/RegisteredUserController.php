@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Models\Scores;
 
 class RegisteredUserController extends Controller
 {
@@ -42,7 +43,17 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        
+
         event(new Registered($user));
+        
+
+        $scores = Scores::where('user_id', $user->id)->first();
+        // scoresテーブルに自分のレコードを持っていないユーザーがregisterしたら自分用のレコードを追加する処理
+        if (!$scores){
+        $scores = new Scores;
+        $scores->user_id = $user->id;
+        $scores->save();}
 
         Auth::login($user);
 
