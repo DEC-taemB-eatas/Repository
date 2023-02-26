@@ -52,10 +52,12 @@ class Fat extends Model
                 }
             }
 
+        $min = min($data_lis_new);
+
         $data = array(
             'data' => $data_lis_new,
             'date' => $date_lis_new,
-            'min'=> $mins
+            'min'=> $min
         );
 
             return $data;
