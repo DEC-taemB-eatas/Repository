@@ -24,10 +24,10 @@ class Comment extends Model
         ->first();
 
         $data = array(
-            1 => 80, //$scores -> eating,
-            2 => 40,//$scores -> eating_habits,
-            3 => 30,//$scores -> ability_to_act,
-            4 => 20,//$scores -> physical_condition
+            1 => $scores -> eating,
+            2 => $scores -> eating_habits,
+            3 => $scores -> ability_to_act,
+            4 => $scores -> physical_condition
         );
        
         //dd(array_keys($data,max($data)));
