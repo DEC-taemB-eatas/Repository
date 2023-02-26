@@ -21,7 +21,7 @@ class BodyController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function __construct(Weight $weight,Muscle $muscle,Fat $fat,Target $target,Comment $comment,Scores $score)
+    public function __construct(Weight $weight,Muscle $muscle,Fat $fat,Target $target,Comment $comment,Scores $score)
     {
         $this -> weight = $weight;
         $this -> muscle = $muscle;
