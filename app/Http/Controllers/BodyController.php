@@ -50,7 +50,7 @@ class BodyController extends Controller
             'score' => $scores
         );
         
-        //dd($body);
+        dd($body);
 
         return view('body.index', compact('body'));
     }
