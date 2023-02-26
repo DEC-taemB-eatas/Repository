@@ -104,7 +104,7 @@ class ChartController extends Controller
         
         if($request->q1 == 0){$eating_habits_score += 6;}
         if($request->q2 == 0){$eating_habits_score += 7;}
-        if($request->q3 == 0){$eating_habits_score += 7;}
+        if($request->q3 == 1){$eating_habits_score += 7;}
         if($request->q4 == 0){$eating_score += 6;}
         if($request->q5 == 0){$eating_score += 6;}
         if($request->q6 == 1){$eating_score += 6;}
@@ -156,12 +156,11 @@ class ChartController extends Controller
         }
 
         
-
         $scores = Scores::where('user_id', $id)->first();
-        $scores->eating = $eating_score;
-        $scores->eating_habits = $eating_habits_score;
-        $scores->ability_to_act = $ability_to_act_score;
-        $scores->physical_condition = $physical_condition;
+        $scores->eating = $eating_score*2.5;
+        $scores->eating_habits = $eating_habits_score*5;
+        $scores->ability_to_act = $ability_to_act_score*5;
+        $scores->physical_condition = $physical_condition*5;
         $scores->save();
         
         
