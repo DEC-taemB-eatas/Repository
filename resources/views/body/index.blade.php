@@ -75,7 +75,7 @@
             <div id="dash-content" class="bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start ">
 
                 <div class="border-b p-3">
-                    <h5 class="font-bold md-6 text-black">Your health points $body['score']['sum']/100</h5>
+                    <h5 class="font-bold md-6 text-black">Your health points {{$body['score']['sum']}}/100</h5>
                     </h5>
                 </div>
 
