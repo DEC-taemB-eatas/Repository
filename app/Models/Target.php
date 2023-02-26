@@ -19,7 +19,7 @@ class Target extends Model
         'updated_at',
     ];
 
-    public function getTargetList():Array
+    public function getTargetList($length):Array
     {
         function getType($age,$initial_bmi){
             if ($age>=50){
@@ -75,7 +75,8 @@ class Target extends Model
             ->get();
         
         //順番に配列に代入
-        foreach($targets as $target){
+        foreach($targets as $i => $target  ){
+            if($i == $length + 30){break;}//実際の体重データ＋30日で目標データを止める
             $bmi = $target -> bmi;//bmiだけ取り出す
             $weight = round($bmi * $height2 + $initial_weight,2) ;//身長の二乗を掛けて体重に変換後、最初の体重を足す
             //配列に代入
