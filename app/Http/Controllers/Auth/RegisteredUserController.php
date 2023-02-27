@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use App\Models\Scores;
+use App\Models\Question;
 
 class RegisteredUserController extends Controller
 {
@@ -54,6 +55,16 @@ class RegisteredUserController extends Controller
         $scores = new Scores;
         $scores->user_id = $user->id;
         $scores->save();}
+
+
+        $questions = Question::where('user_id', $user->id)->first();
+        // scoresテーブルに自分のレコードを持っていないユーザーがlogin画面に来たら自分用のレコードを追加する処理
+        if (!$questions)
+        {
+        $questions = new Question;
+        $questions->user_id = $user->id;
+        $questions->save();
+        }
 
         Auth::login($user);
 
