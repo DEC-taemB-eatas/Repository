@@ -70,13 +70,7 @@ class ChartController extends Controller
         $id = $user -> id;
         $questions = Question::where('user_id', $id)->first();
         
-        // chartテーブルに自分のレコードを持っていないユーザーがedit画面に来たら自分用のレコードを追加する処理
-        if (!$questions)
-        {
-        $questions = new Question;
-        $questions->user_id = $id;
-        $questions->save();
-        }
+        
         return view('chart.edit',compact('user','id','questions'));
     }
 
