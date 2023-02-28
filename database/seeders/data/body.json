@@ -1,23 +1,323 @@
 {
-    "weights": [
-        {
-            "user_id": 1,
-            "weight": 50,
-            "measure_at": "2023-01-01"
-        }
-    ],
-    "fats": [
-        {
-            "user_id": 1,
-            "fat": 25,
-            "measure_at": "2023-01-01"
-        }
-    ],
-    "muscles": [
-        {
-            "user_id": 1,
-            "muscle": 50,
-            "measure_at": "2023-01-01"
-        }
-    ]
+  "weights": [
+    {
+      "user_id": 1,
+      "weights": 70.47,
+      "measure_at": "2023-01-01"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.4,
+      "measure_at": "2023-01-02"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.47,
+      "measure_at": "2023-01-03"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.53,
+      "measure_at": "2023-01-04"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.6,
+      "measure_at": "2023-01-05"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.3,
+      "measure_at": "2023-01-06"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.7,
+      "measure_at": "2023-01-07"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.6,
+      "measure_at": "2023-01-08"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.5,
+      "measure_at": "2023-01-09"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.4,
+      "measure_at": "2023-01-10"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.3,
+      "measure_at": "2023-01-11"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.95,
+      "measure_at": "2023-01-12"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.6,
+      "measure_at": "2023-01-13"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.55,
+      "measure_at": "2023-01-14"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.85,
+      "measure_at": "2023-01-15"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.6,
+      "measure_at": "2023-01-16"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.45,
+      "measure_at": "2023-01-17"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.9,
+      "measure_at": "2023-01-18"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.85,
+      "measure_at": "2023-01-19"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.0,
+      "measure_at": "2023-01-20"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.4,
+      "measure_at": "2023-01-21"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.3,
+      "measure_at": "2023-01-22"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.7,
+      "measure_at": "2023-01-23"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.55,
+      "measure_at": "2023-01-24"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.9,
+      "measure_at": "2023-01-25"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.25,
+      "measure_at": "2023-01-26"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.22,
+      "measure_at": "2023-01-27"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.2,
+      "measure_at": "2023-01-28"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.17,
+      "measure_at": "2023-01-29"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.14,
+      "measure_at": "2023-01-30"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.12,
+      "measure_at": "2023-01-31"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.09,
+      "measure_at": "2023-02-01"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.07,
+      "measure_at": "2023-02-02"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.04,
+      "measure_at": "2023-02-03"
+    },
+    {
+      "user_id": 1,
+      "weights": 69.01,
+      "measure_at": "2023-02-04"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.99,
+      "measure_at": "2023-02-05"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.96,
+      "measure_at": "2023-02-06"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.93,
+      "measure_at": "2023-02-07"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.91,
+      "measure_at": "2023-02-08"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.88,
+      "measure_at": "2023-02-09"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.85,
+      "measure_at": "2023-02-10"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.83,
+      "measure_at": "2023-02-11"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.8,
+      "measure_at": "2023-02-12"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.77,
+      "measure_at": "2023-02-13"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.75,
+      "measure_at": "2023-02-14"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.72,
+      "measure_at": "2023-02-15"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.7,
+      "measure_at": "2023-02-16"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.67,
+      "measure_at": "2023-02-17"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.64,
+      "measure_at": "2023-02-18"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.62,
+      "measure_at": "2023-02-19"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.59,
+      "measure_at": "2023-02-20"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.56,
+      "measure_at": "2023-02-21"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.54,
+      "measure_at": "2023-02-22"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.51,
+      "measure_at": "2023-02-23"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.48,
+      "measure_at": "2023-02-24"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.46,
+      "measure_at": "2023-02-25"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.43,
+      "measure_at": "2023-02-26"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.41,
+      "measure_at": "2023-02-27"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.38,
+      "measure_at": "2023-02-28"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.35,
+      "measure_at": "2023-03-01"
+    },
+    {
+      "user_id": 1,
+      "weights": 68.33,
+      "measure_at": "2023-03-02"
+    }
+  ],
+  "fats": [
+    {
+      "user_id": 1,
+      "fat": 40.0,
+      "measure_at": "2023-01-01"
+    }
+  ],
+  "muscles": [
+    {
+      "user_id": 1,
+      "fat": 36.1,
+      "measure_at": "2023-01-01"
+    }
+  ]
 }
