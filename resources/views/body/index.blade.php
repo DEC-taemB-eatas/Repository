@@ -75,7 +75,7 @@
             <div id="dash-content" class="bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start ">
 
                 <div class="border-b p-3">
-                    <h5 class="font-bold md-6 text-black">Your health points {{$body['score']['sum']}}/100</h5>
+                    <h5 class="font-bold md-6 text-black">あなたのヘルスポイント {{$body['score']['sum']}}/100</h5>
                     </h5>
                 </div>
 
@@ -86,8 +86,8 @@
                                 <div class="rounded-full p-3 bg-gray-300"><i class="fa fa-wallet fa-fw fa-inverse text-indigo-500"></i></div>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-bold text-3xl">{{ $body['score']['eating_habits'] }}/20 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
-                                <h5 class="font-bold text-gray-500">Eating habits</h5>
+                                <h3 class="font-bold text-3xl">{{ $body['score']['eating_habits'] }}/100 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
+                                <h5 class="font-bold text-gray-500">食事の規則性</h5>
                             </div>
                         </div>
                     </div>
@@ -100,8 +100,8 @@
                                 <div class="rounded-full p-3 bg-gray-300"><i class="fas fa-users fa-fw fa-inverse text-indigo-500"></i></div>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-bold text-3xl">{{ $body['score']['eating'] }}/40 <span class="text-orange-500"><i class="fas fa-exchange-alt"></i></span></h3>
-                                <h5 class="font-bold text-gray-500">Eating</h5>
+                                <h3 class="font-bold text-3xl">{{ $body['score']['eating'] }}/100 <span class="text-orange-500"><i class="fas fa-exchange-alt"></i></span></h3>
+                                <h5 class="font-bold text-gray-500">食事内容</h5>
                             </div>
                         </div>
                     </div>
@@ -114,8 +114,8 @@
                                 <div class="rounded-full p-3 bg-gray-300"><i class="fas fa-user-plus fa-fw fa-inverse text-indigo-500"></i></div>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-bold text-3xl"> {{ $body['score']['ability_to_act'] }}/20<span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
-                                <h5 class="font-bold text-gray-500">Ability to act</h5>
+                                <h3 class="font-bold text-3xl"> {{ $body['score']['ability_to_act'] }}/100<span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
+                                <h5 class="font-bold text-gray-500">意欲</h5>
                             </div>
                         </div>
                     </div>
@@ -128,8 +128,8 @@
                                 <div class="rounded-full p-3 bg-gray-300"><i class="fas fa-server fa-fw fa-inverse text-indigo-500"></i></div>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-bold text-3xl">{{ $body['score']['physical_condition'] }}/20</h3>
-                                <h5 class="font-bold text-gray-500">Physical condition</h5>
+                                <h3 class="font-bold text-3xl">{{ $body['score']['physical_condition'] }}/100</h3>
+                                <h5 class="font-bold text-gray-500"></h5>身体状況
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
                             <!--Graph Card-->
 
                             <div class="border-b p-3">
-                                <h5 class="font-bold text-black">Fats</h5>
+                                <h5 class="font-bold text-black">体脂肪</h5>
                             </div>
                             <div class="p-5">
                                 <div class="ct-chart ct-golden-section" id="chart2"></div>
@@ -190,7 +190,7 @@
 
                             <!-- Graph card2 -->
                             <div class="border-b p-3">
-                                <h5 class="font-bold text-black">Muscles</h5>
+                                <h5 class="font-bold text-black">筋肉量</h5>
                             </div>
                             <div class="p-5">
                                 <div class="ct-chart ct-golden-section" id="chart3"></div>

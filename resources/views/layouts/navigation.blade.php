@@ -18,15 +18,15 @@
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('body.create')" :active="request()->routeIs('body.create')">
-                        {{ __('Create') }}
+                        {{ __('体重記録') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('body.index')" :active="request()->routeIs('body.index')">
-                        {{ __('Index') }}
+                        {{ __(' ') }}
                     </x-nav-link>
                 </div>
-                <!-- 🔽 質問項目入力画面へのリンク -->
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 <x-nav-link :href="route('chart.edit')" :active="request()->routeIs('chart.edit')">
                     {{ __('質問項目') }}
