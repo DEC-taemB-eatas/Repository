@@ -231,7 +231,7 @@
                     @json($body['target']['data'])
                 ]
             }, {
-                low: @json($body['weights']['min']) - 0.3,
+                low: @json($body['weights']['min']) - 1.0,
                 showArea: true,
                 showPoint: false,
                 fullWidth: true,
