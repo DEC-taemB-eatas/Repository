@@ -19,7 +19,7 @@ class BodySeeder extends Seeder
     {
         $this->command->info("体組成データの作成を開始します...");
 
-        $json = file_get_contents(__DIR__ . '/body/comment.json');
+        $json = file_get_contents(__DIR__ . '/data/body.json');
         $bodys = json_decode($json, true);
 
         foreach ($bodys['weights'] as $weight) {
