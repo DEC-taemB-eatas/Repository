@@ -5,20 +5,15 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('body.index') }}">
                         <img src="/image/logo.png" width="150" height="150">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('        ') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('body.create')" :active="request()->routeIs('body.create')">
-                        {{ __('Create') }}
+                        {{ __('データ入力') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -28,9 +23,9 @@
                 </div>
                 <!-- 🔽 質問項目入力画面へのリンク -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <x-nav-link :href="route('chart.edit')" :active="request()->routeIs('chart.edit')">
-                    {{ __('質問項目') }}
-                </x-nav-link>
+                    <x-nav-link :href="route('chart.edit')" :active="request()->routeIs('chart.edit')">
+                        {{ __('質問項目') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -91,11 +86,6 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>
-        <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('body.create')" :active="request()->routeIs('body.create')">
                 {{ __('Create') }}
             </x-responsive-nav-link>
@@ -107,9 +97,9 @@
         </div>
         <!-- 🔽 質問項目入力画面へのリンク -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <x-responsive-nav-link :href="route('chart.edit')" :active="request()->routeIs('chart.edit')">
-                    {{ __('質問項目') }}
-                </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('chart.edit')" :active="request()->routeIs('chart.edit')">
+                {{ __('質問項目') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

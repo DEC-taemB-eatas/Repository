@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('ダッシュボード') }}
         </h2>
     </x-slot>
 
@@ -18,7 +18,8 @@
 
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+            integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
         <!--Replace with your tailwind.css once created-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
@@ -75,18 +76,21 @@
             <div id="dash-content" class="bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start ">
 
                 <div class="border-b p-3">
-                    <h5 class="font-bold md-6 text-black">あなたのヘルスポイント {{$body['score']['sum']}}/100</h5>
+                    <h5 class="font-bold md-6 text-black">あなたのヘルスポイント {{ $body['score']['sum'] }}/100</h5>
                     </h5>
                 </div>
 
                 <div class="w-sm lg:w-full">
-                    <div class="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                    <div
+                        class="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
                         <div class="flex flex-col items-center">
                             <div class="flex-shrink pr-4">
-                                <div class="rounded-full p-3 bg-gray-300"><i class="fa fa-wallet fa-fw fa-inverse text-indigo-500"></i></div>
+                                <div class="rounded-full p-3 bg-gray-300"><i
+                                        class="fa fa-wallet fa-fw fa-inverse text-indigo-500"></i></div>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-bold text-3xl">{{ $body['score']['eating_habits'] }}/100 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl">{{ $body['score']['eating_habits'] }}/100 <span
+                                        class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
                                 <h5 class="font-bold text-gray-500">食事の規則性</h5>
                             </div>
                         </div>
@@ -94,13 +98,16 @@
                 </div>
 
                 <div class="w-1/2 lg:w-full">
-                    <div class="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                    <div
+                        class="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
                         <div class="flex flex-col items-center">
                             <div class="flex-shrink pr-4">
-                                <div class="rounded-full p-3 bg-gray-300"><i class="fas fa-users fa-fw fa-inverse text-indigo-500"></i></div>
+                                <div class="rounded-full p-3 bg-gray-300"><i
+                                        class="fas fa-users fa-fw fa-inverse text-indigo-500"></i></div>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-bold text-3xl">{{ $body['score']['eating'] }}/100 <span class="text-orange-500"><i class="fas fa-exchange-alt"></i></span></h3>
+                                <h3 class="font-bold text-3xl">{{ $body['score']['eating'] }}/100 <span
+                                        class="text-orange-500"><i class="fas fa-exchange-alt"></i></span></h3>
                                 <h5 class="font-bold text-gray-500">食事内容</h5>
                             </div>
                         </div>
@@ -108,13 +115,16 @@
                 </div>
 
                 <div class="w-1/2 lg:w-full">
-                    <div class="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                    <div
+                        class="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
                         <div class="flex flex-col items-center">
                             <div class="flex-shrink pr-4">
-                                <div class="rounded-full p-3 bg-gray-300"><i class="fas fa-user-plus fa-fw fa-inverse text-indigo-500"></i></div>
+                                <div class="rounded-full p-3 bg-gray-300"><i
+                                        class="fas fa-user-plus fa-fw fa-inverse text-indigo-500"></i></div>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-bold text-3xl"> {{ $body['score']['ability_to_act'] }}/100<span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl"> {{ $body['score']['ability_to_act'] }}/100<span
+                                        class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
                                 <h5 class="font-bold text-gray-500">意欲</h5>
                             </div>
                         </div>
@@ -122,10 +132,12 @@
                 </div>
 
                 <div class="w-1/2 lg:w-full">
-                    <div class="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                    <div
+                        class="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
                         <div class="flex flex-col items-center">
                             <div class="flex-shrink pr-4">
-                                <div class="rounded-full p-3 bg-gray-300"><i class="fas fa-server fa-fw fa-inverse text-indigo-500"></i></div>
+                                <div class="rounded-full p-3 bg-gray-300"><i
+                                        class="fas fa-server fa-fw fa-inverse text-indigo-500"></i></div>
                             </div>
                             <div class="flex-1">
                                 <h3 class="font-bold text-3xl">{{ $body['score']['physical_condition'] }}/100</h3>
@@ -149,7 +161,7 @@
 
                             <!--Graph Card-->
                             <div class="border-b p-3">
-                                <h5 class="font-bold text-black">Your wight & Setting target</h5>
+                                <h5 class="font-bold text-black">あなたの体重と目標の推移</h5>
                             </div>
                             <div class="p-5">
                                 <div class="ct-chart ct-golden-section" id="chart1"></div>
@@ -157,7 +169,7 @@
                             <!--/Graph Card-->
 
                             <div class="border-b p-3">
-                                <h5 class="font-bold text-black">Review</h5>
+                                <h5 class="font-bold text-black">レビュー</h5>
                             </div>
                             <div class="p-5">
                                 <table class="w-full p-5 text-gray-700">
@@ -219,7 +231,7 @@
                     @json($body['target']['data'])
                 ]
             }, {
-                low: @json($body['weights']['min'])-0.3,
+                low: @json($body['weights']['min']) - 0.3,
                 showArea: true,
                 showPoint: false,
                 fullWidth: true,
@@ -231,7 +243,8 @@
                         d: {
                             begin: 1000 * data.index,
                             dur: 1000,
-                            from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                            from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height())
+                                .stringify(),
                             to: data.path.clone().stringify(),
                             easing: Chartist.Svg.Easing.easeOutQuint
                         }
@@ -245,7 +258,7 @@
                     @json($body['fats']['data']),
                 ]
             }, {
-                low: @json($body['fats']['min'])-2
+                low: @json($body['fats']['min']) - 2
             });
 
             var chartScatter = new Chartist.Line('#chart3', {
@@ -254,7 +267,7 @@
                     @json($body['muscles']['data']),
                 ]
             }, {
-                low: @json($body['muscles']['min'])-3
+                low: @json($body['muscles']['min']) - 3
             });
 
             chartScatter.on('draw', function(data) {
@@ -263,7 +276,8 @@
                         d: {
                             begin: 500 * data.index,
                             dur: 1000,
-                            from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                            from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height())
+                                .stringify(),
                             to: data.path.clone().stringify(),
                             easing: Chartist.Svg.Easing.easeOutQuint
                         }
